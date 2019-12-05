@@ -11,7 +11,7 @@ const routeConfigMap : NavigationRouteConfigMap<{}, NavigationSwitchProp> = {
 
 const switchConfig : CreateNavigatorConfig<{}, NavigationSwitchRouterConfig, {}, NavigationSwitchProp> = {
   initialRouteName: 'Home', 
-  backBehavior: "none", 
+  backBehavior: "initialRoute", 
   resetOnBlur: false
 }
 
