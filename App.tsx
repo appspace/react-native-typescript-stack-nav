@@ -10,7 +10,9 @@ const routeConfigMap : NavigationRouteConfigMap<{}, NavigationSwitchProp> = {
 }
 
 const switchConfig : CreateNavigatorConfig<{}, NavigationSwitchRouterConfig, {}, NavigationSwitchProp> = {
-  initialRouteName: 'Home'
+  initialRouteName: 'Home', 
+  backBehavior: "none", 
+  resetOnBlur: false
 }
 
 const App = createSwitchNavigator(routeConfigMap, switchConfig)
