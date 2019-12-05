@@ -10,10 +10,13 @@ type ScreenProps = { language: string };
 class ProfileScreen extends React.Component<NavigationStackScreenProps<Params, ScreenProps>> {
     render() {
         return (
-          <View>
+          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text>Profile: </Text>
             <Text>Language: </Text>
             <Text>Device ID: </Text>
+            <Button title = 'Back' 
+                onPress={() => this.props.navigation.navigate('Home')}
+            />
           </View>
         )
     }

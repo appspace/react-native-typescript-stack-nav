@@ -10,7 +10,7 @@ type ScreenProps = { language: string };
 class HomeScreen extends React.Component<NavigationStackScreenProps<Params, ScreenProps>> {
     render() {
         return (
-          <View>
+          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text>Welcome to home screen!</Text>
             <Button title = 'Go to Profile' 
                 onPress={() => this.props.navigation.navigate('Profile')}
