@@ -1,18 +1,20 @@
 import React from 'react';
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import { createAppContainer, createSwitchNavigator, NavigationRouteConfigMap, NavigationSwitchProp, CreateNavigatorConfig, NavigationSwitchRouterConfig } from 'react-navigation';
 import { createStackNavigator, NavigationStackOptions, NavigationStackProp, NavigationStackScreenProps } from 'react-navigation-stack';
 import ProfileScreen from './ProfileScreen';
 import HomeScreen from './HomeScreen';
 
-const App = createSwitchNavigator(
-  {
-    Home: { screen: HomeScreen },
-    Profile: { screen: ProfileScreen }
-  }, 
-  {
-    initialRouteName: 'Home'
-  }
-)
+const routeConfigMap : NavigationRouteConfigMap<{}, NavigationSwitchProp> = {
+  Home: { screen: HomeScreen },
+  Profile: { screen: ProfileScreen }
+}
+
+const switchConfig : CreateNavigatorConfig<{}, NavigationSwitchRouterConfig, {}, NavigationSwitchProp> = {
+  initialRouteName: 'Home'
+}
+
+const App = createSwitchNavigator(routeConfigMap, switchConfig)
+
 const AppContainer = createAppContainer(App);
 
 export default AppContainer;
